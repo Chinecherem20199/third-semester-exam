@@ -5,13 +5,19 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Chat</title>
-		<link rel="stylesheet" href="css/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+			integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<div class="container">
 			<div class="chat-container">
 				<div class="chat-header">
-					<h1>Saheed's Chat Bot</h1>
+					<h1>Welcome to Chi Resturant</h1>
 				</div>
 				<div class="chat-body">	
 				</div>
@@ -36,7 +42,9 @@
 			integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
 			crossorigin="anonymous"
 		></script>
-		<script src="/socket.io/socket.io.js"></script>
-		<script src="./js/main.js"></script>
+		<!-- <script src="/socket.io/socket.io.js"></script> -->
+		<script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+		<script src="home.js"></script>
+		<script>const socket = io();</script>
 	</body>
 </html>
