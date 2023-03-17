@@ -92,7 +92,7 @@ exports.orderHistory = async (io, sessionID) => {
     if (sessionOrder.placedOrder.length < 1) {
         botMessage = formatMessage(
             process.env.botName,
-            'You have not ordered anything yet, try to place an order'
+            'You have no order history yet, try to place an order and checkout the order'
         );
         io.to(sessionID).emit('bot message', botMessage);
     } else {

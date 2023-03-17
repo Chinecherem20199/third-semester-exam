@@ -24,6 +24,7 @@ html {
 
 .chat-body::-webkit-scrollbar-thumb {
     background-color: #312e2e;
+    
 }
 
 
@@ -43,7 +44,7 @@ body {
     /* margin: auto; */
     max-width: 800px;
     padding: 20px;
-    background: #e7bfbf;
+    background: #756767;
     border-radius: 5px;
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
@@ -53,7 +54,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px 0;
-    background-color: chocolate;
+    background-color: #fe9601;
     border-bottom: 1px solid #ccc;
     margin: 0;
 }
@@ -78,7 +79,8 @@ body {
     flex-direction: column;
     align-items: flex-start;
     padding: 0 10px;
-    background-color: #5a5555;
+    background-color: #fe9601;
+    /* background-color: #5a5555; */
     max-width: 80%;
     overflow-wrap: break-word;
     margin-bottom: 10px;
@@ -89,7 +91,8 @@ body {
 /* background-color: #eee; */
 .meta {
     font-size: 0.8rem;
-    color: #999;
+    /* color: #999; */
+    color: #ffffffff;
     margin-bottom: 5px;
     display: flex;
     width: 100%;
@@ -100,7 +103,7 @@ body {
 }
 
 .meta span {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .bot {
@@ -139,7 +142,7 @@ body {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: chocolate;
+    background-color: #fe9601;
     color: #fff;
     width: 30%;
     cursor: pointer;
