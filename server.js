@@ -7,7 +7,7 @@ const server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server);
 const sessionMiddleware = require('./middleware/expressMiddleware');
-const connectMongo = require('./db');
+const { connectMongo } = require('./db');
 require('dotenv').config();
 const {
     saveSessionID,
@@ -77,7 +77,7 @@ io.on('connection', async(socket) => {
                     botMessage = await cancelOrder(io, sessionId);
                 } else {
                     botMessage = await formatMessage(
-                        config.botName,
+                        process.env.botName,
                         'Invalid Input. Enter 1 or 99 or 98 or 97 or 0'
                     );
                     io.to(sessionId).emit('bot message', botMessage);
@@ -93,7 +93,7 @@ io.on('connection', async(socket) => {
                     number !== 5
                 ) {
                     botMessage = await formatMessage(
-                        config.botName,
+                        process.env.botName,
                         'Invalid Input. Enter 1 or 2 or 3 or 4 or 5'
                     );
                     io.to(sessionId).emit('bot message', botMessage);

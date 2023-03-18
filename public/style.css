@@ -43,7 +43,7 @@ body {
     width: 80%;
     /* margin: auto; */
     max-width: 800px;
-    padding: 20px;
+    padding: 0px;
     background: #756767;
     border-radius: 5px;
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
@@ -85,14 +85,15 @@ body {
     overflow-wrap: break-word;
     margin-bottom: 10px;
     padding: 5px 10px;
+    margin-left: 10px;
     border-radius: 5px;
     color: #ece4e4;
 }
-/* background-color: #eee; */
+/* name and time in the chat */
 .meta {
     font-size: 0.8rem;
     /* color: #999; */
-    color: #ffffffff;
+    color: rgb(32, 29, 29);
     margin-bottom: 5px;
     display: flex;
     width: 100%;
@@ -102,8 +103,9 @@ body {
     /* border: 1px solid red; */
 }
 
+
 .meta span {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .bot {
@@ -114,7 +116,7 @@ body {
 .user {
     align-self: end;
     width: fit-content;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .chat-form-container {
@@ -135,7 +137,8 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     outline: none;
-    margin-right: 10px;
+    margin-right: 5px;
+    margin-left: 10px;
 }
 
 #chat-form button {
@@ -143,6 +146,7 @@ body {
     border: none;
     border-radius: 5px;
     background-color: #fe9601;
+    margin: 10px;
     color: #fff;
     width: 30%;
     cursor: pointer;
@@ -151,4 +155,34 @@ body {
 
 #chat-form button:hover {
     background: #e6b683;
+}
+
+@media screen and (max-width: 768px) {
+    .chat-header h1 {
+        font-size: 18px;
+    }
+        .container {
+            float: none;
+            margin: 50px auto;
+            height: 85%;
+            width: 90%;
+        }
+        
+        .bot, .user {
+                       font-size: 10px;
+                       width: auto;
+                       line-height: 1.1rem;
+                       margin-bottom: 1px;
+                       margin-top: 10px;
+                       max-width: 50%;
+                       padding: 14px;
+                       clear: both;
+        
+                   }
+        #chat-form button{
+            margin-left: 5px;
+        }
+                .meta {
+                    font-size: 10px;
+                }
 }

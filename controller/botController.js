@@ -25,13 +25,19 @@ exports.loadMessage = async (io, sessionID) => {
         io.to(message.sessionID).emit('bot message', message.botMessage);
     });
 };
+exports.welcomeName = (io, sessionID) => {
+    // socket.on("user_input", (msg) => {
 
+    //    if(!sessionData.name) {
+    //         io.to(sessionId).emit("user_message", msg);
+    //         sessionData.name = msg;
+}
 exports.welcomeMessage = (io, sessionID) => {
     io.to(sessionID).emit(
         'bot message',
         formatMessage(
             process.env.botName,
-            "Welcome to Chi ChatBot! 🤖 <br> Say hello to the bot"
+            'Welcome to Chi ChatBot! 😍 <br> Say hello to the bot'
         )
     );
 };
