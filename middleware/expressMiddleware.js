@@ -1,5 +1,6 @@
 const session = require('express-session');
 
+const config  = require('./chatConfig');
 const MongoDBStore = require('connect-mongodb-session')(session);
 require('dotenv').config();
 const store = new MongoDBStore({
@@ -11,9 +12,11 @@ store.on('error', function (error) {
     console.log(error);
 });
 
+const maxAge = parseInt(config.sessionMaxAge);
 
 const sessionMiddleware = session({
-    secret: 'secret',
+    store: store,
+    secret: process.env.sessionSecret,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -22,4 +25,6 @@ const sessionMiddleware = session({
 });
 
 module.exports = sessionMiddleware;
+
+
 

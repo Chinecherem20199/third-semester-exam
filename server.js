@@ -21,9 +21,9 @@ const {
     cancelOrder,
     saveOrder
 } = require('./controller/botController');
-
-const formatMessage = require('./utils/message');
 const bodyParser = require('body-parser');
+const formatMessage = require('./utils/message');
+const { config } = require('./middleware/chatConfig');
 const MessageModel = require('./model/mesgSchema');
 io.engine.use(sessionMiddleware);
 

@@ -17,7 +17,7 @@ socket.on('bot message', (message) => {
     } else {
         message.text = message.text;
     }
-    outputMessage("Chi ChatBot", message);
+    outputMessage('Chi ChatBot', message);
 
     // Scroll down
     chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -25,8 +25,7 @@ socket.on('bot message', (message) => {
 
 socket.on('user message', (message) => {
     // console.log(message);
-    // outputMessage('You', message);
-    outputMessage(`You, " " ${message}`);
+    outputMessage('You', message);
 
     // Scroll down
     chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -57,7 +56,7 @@ chatForm.addEventListener('submit', (e) => {
 const outputMessage = (sender, message) => {
     const div = document.createElement('div');
     div.classList.add('chat-messages');
-    if (sender === "Chi ChatBot") {
+    if (sender === 'Chi ChatBot') {
         div.classList.add('bot');
     } else {
         div.classList.add('user');
