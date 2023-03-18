@@ -23,7 +23,7 @@ const {
 } = require('./controller/botController');
 
 const formatMessage = require('./utils/message');
-const { config } = require('./middleware/chatConfig');
+const bodyParser = require('body-parser');
 const MessageModel = require('./model/mesgSchema');
 io.engine.use(sessionMiddleware);
 
@@ -33,6 +33,12 @@ const levels = {};
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(sessionMiddleware);
+app.use(bodyParser.urlencoded({ extended: false }));
+
+//socket.io middleware used to store and retrieve sessions
+io.use((socket, next) => {
+    sessionMiddleware(socket.request, socket.request.res, next);
+});
 
 io.on('connection', async(socket) => {
     // get the session

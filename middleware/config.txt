@@ -4,9 +4,9 @@ const config = {
     botName: process.env.botName,
     PORT: process.env.PORT_NUMBER,
     mongoURI: process.env.MONGO_URL,
-    // sessionSecret: 'hmakalhynvggsiavgsdxceugyrbdakldbd',
-    // local_db: process.env.local_db,
-    // db_name: process.env.db_name,
+    sessionSecret: 'hmakalhynvggsiavgsdxceugyrbdakldbd',
+     local_db: process.env.local_db,
+     db_name: process.env.db_name,
     sessionMaxAge: process.env.sessionMaxAge
 };
 

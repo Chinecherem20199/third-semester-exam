@@ -111,6 +111,7 @@ body {
 .bot {
     align-self: flex-start;
     width: fit-content;
+    
 }
 
 .user {

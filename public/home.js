@@ -25,7 +25,8 @@ socket.on('bot message', (message) => {
 
 socket.on('user message', (message) => {
     // console.log(message);
-    outputMessage('You', message);
+    // outputMessage('You', message);
+    outputMessage(`You, " " ${message}`);
 
     // Scroll down
     chatMessages.scrollTop = chatMessages.scrollHeight;
