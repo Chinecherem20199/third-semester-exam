@@ -9,6 +9,7 @@ const io = new Server(server);
 const sessionMiddleware = require('./middleware/expressMiddleware');
 const { connectMongo } = require('./db');
 require('dotenv').config();
+const PORT_NUMBER = process.env.PORT_NUMBER;
 const {
     saveSessionID,
     loadMessage,
@@ -43,9 +44,7 @@ io.use((socket, next) => {
 io.on('connection', async(socket) => {
     // get the session
     console.log('New Websocket');
-    const session = socket.request.session;
-    const sessionId = session.id;
-    // console.log(sessionId);
+    const sessionId = socket.request.session.id;
     saveSessionID(sessionId);
     //connect users with the same session id
     socket.join(sessionId);
@@ -120,8 +119,8 @@ io.on('connection', async(socket) => {
     });
 });
 
-server.listen(3000, () => {
-    console.log('listening on *:3000');
+server.listen(PORT_NUMBER, () => {
+    console.log(`listening on *:${PORT_NUMBER}`);
 });
 connectMongo(server);
 
