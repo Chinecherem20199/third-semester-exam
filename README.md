@@ -10,6 +10,7 @@ This is a chatbot for food menu that allows users to place an order, cancel orde
 * Moment.js
 * Socket.IO
 * MongoDB
+* Connect-mongodb-session
   - - - -
 #### Live Site
 * [Chi chatbot](https://chi-chatbot.onrender.com) 
